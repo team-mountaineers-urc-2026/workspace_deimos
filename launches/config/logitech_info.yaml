@@ -1,0 +1,20 @@
+image_width: 320
+image_height: 240
+camera_name: logitech_00
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [1852.52608, 0.0,  632.32321, 0.0, 1855.01132, 425.55154, 0.0, 0.0, 1.0]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.135774, -0.188315, -0.007040, -0.018334, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+projection_matrix:
+  rows: 3
+  cols: 3
+  data: [1853.38721, 0.0, 607.7552, 0.0, 0.0, 1906.60767, 421.87706, 0.0, 0.0, 0.0, 1.0, 0.0]

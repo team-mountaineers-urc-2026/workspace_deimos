@@ -1,0 +1,103 @@
+repositories:
+
+##############
+#     ES     #
+##############
+
+
+##############
+#  Autonomy  #
+##############
+  autonomy/autonomy_2026:
+    type: git
+    url: git@github.com:wvu-urc/autonomy_2026.git
+    version: testing_objects
+
+  autonomy/autonomy_led_pkg:
+    type: git
+    url: git@github.com:wvu-urc/autonomy_led_pkg.git
+    version: main
+
+  autonomy/ros2_aruco:
+    type: git
+    url: git@github.com:wvu-urc/ros2_aruco.git
+    version: main
+
+##############################
+#  Infrastructural Packages  #
+##############################
+
+  infrastructural_packages/health_monitor_pkg:
+    type: git
+    url: git@github.com:wvu-urc/health_monitor_pkg.git
+    version: main
+
+########################
+# Hardware Interfacing #
+########################
+
+  hardware_interfacing/pico_interface_pkg:
+    type: git
+    url: git@github.com:wvu-urc/pico_interface_pkg.git
+    version: caleb-working
+
+  hardware_interfacing/pyactuator_lib:
+    type: git
+    url: git@github.com:wvu-urc/pyactuator_lib.git
+    version: main
+
+  hardware_interfacing/can_interface_pkg:
+    type: git
+    url: git@github.com:wvu-urc/can_interface_pkg.git
+    version: master
+
+  hardware_interfacing/dynamixel_lib:
+    type: git
+    url: git@github.com:wvu-urc/dynamixel_lib.git
+    version: trevor_working
+
+  hardware_interfacing/JoyController:
+    type: git
+    url: git@github.com:wvu-urc/JoyController.git
+    version: main
+
+##############
+#  Controls  #
+##############
+
+  control_packages/controls:
+    type: git
+    url: git@github.com:wvu-urc/controls.git
+    version: deimos
+
+###########
+# Cameras #
+###########
+
+  cameras/CameraManager:
+    type: git
+    url: git@github.com:wvu-urc/CameraManager.git
+    version: deimos
+
+  cameras/realsense-ros:
+    type: git
+    url: git@github.com:IntelRealSense/realsense-ros.git
+    version: ros2-master
+
+
+
+###########    
+# Science #
+###########
+  science/deimos_science:
+    type: git
+    url: git@github.com:wvu-urc/deimos_science.git
+    version: main
+
+##########
+#  MISC  #
+#########
+  autonomy/livox_ros_driver2:
+    type: git
+    url: git@github.com:wvu-urc/livox_ros_driver2.git
+    version: master

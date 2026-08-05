@@ -1,0 +1,2 @@
+string target
+bool data
