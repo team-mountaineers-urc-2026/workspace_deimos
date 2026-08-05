@@ -1,0 +1,100 @@
+##URC UDEV rules
+# Use these for static pathing to attached devices
+###################################################################
+#
+# DO NOT UNDER ANY CIRCUMSTANCES ATTACH A COMMENT TO THE END OF A LINE
+# IT WILL BREAK EVERYTHING
+#
+###################################################################
+# Cameras
+###################################################################
+# 
+# if the front facing camera on the lidar mount is plugged in it appears as
+# 	/dev/urc/cam/front_cam
+#
+# if the right facing camera on the lidar mount is plugged in it appears as
+# 	/dev/urc/cam/right_cam
+#
+# if the rear camera on the lidar mount is plugged in it appears as
+# 	/dev/urc/cam/back_cam
+#
+# if the left camera on the lidar mount is plugged in it appears as
+# 	/dev/urc/cam/left_cam
+# 
+# if the shoulder camera on the lift is plugged in it appears as
+# 	/dev/urc/cam/shoulder_cam
+# 
+# if the wrist camera on the ES arm is plugged in it appears as
+# 	/dev/urc/cam/wrist_cam
+# 
+###################################################################
+
+# realsense cam
+#ATTRS{idProduct}=="0b07", ATTRS{idVendor}=="8086", SUBSYSTEM=="video4linux", ATTRS{serial}=="818413020905", ATTR{index}=="0", ENV{ID_USB_INTERFACE_NUM}=="03", SYMLINK+="urc/cam/realsense_1"
+#ATTRS{idProduct}=="0b07", ATTRS{idVendor}=="8086", SUBSYSTEM=="video4linux", ATTRS{serial}=="129523022174", ATTR{index}=="0", ENV{ID_USB_INTERFACE_NUM}=="03", SYMLINK+="urc/cam/realsense_2"
+#ATTRS{idProduct}=="0b07", ATTRS{idVendor}=="8086", SUBSYSTEM=="video4linux", ATTRS{serial}=="125123025322", ATTR{index}=="0", ENV{ID_USB_INTERFACE_NUM}=="03", SYMLINK+="urc/cam/realsense_3"
+#ATTRS{idProduct}=="0b07", ATTRS{idVendor}=="8086", SUBSYSTEM=="video4linux", ATTRS{serial}=="818413020275", ATTR{index}=="0", ENV{ID_USB_INTERFACE_NUM}=="03", SYMLINK+="urc/cam/realsense_4"
+#ATTRS{idProduct}=="0b07", ATTRS{idVendor}=="8086", SUBSYSTEM=="video4linux", ATTRS{serial}=="218622278808", ATTR{index}=="0", ENV{ID_USB_INTERFACE_NUM}=="03", SYMLINK+="urc/cam/realsense_5"
+
+# logitech cameras
+ATTRS{idProduct}=="082d", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="E3BC715F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_00", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="A4A170AF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_01", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="E7F5505F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_02", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="9BF6505F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_03", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="94A6505F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_04", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="A66E1D8F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_05", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="ED97136F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_06", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="9295BE9F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_07", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="1B6B389F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_08", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="0B211B6F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_09", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="E177336F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_10", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="828E8A9F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_11", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="CF72F02F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_12", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="F57F453F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_13", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="082d", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="E3EA715F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_14", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08b6", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="4AB7FD8F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_15", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="1FC2D07F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_16", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="0322917F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_17", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="4D74BA6F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_18", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="082d", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="CCF0927F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_19", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="0892", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="C1279E9F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_20", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="7356FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_21", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="8646FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_22", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="1A45FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_23", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="F3A5FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_24", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="B6C7FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_25", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="6975FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_26", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="8A75FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_27", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="3A96FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_28", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="D146FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_29", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="DB56FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_30", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e7", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="5795FEDF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_31", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="082d", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="3E6C715F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_32", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08b6", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="C684DD8F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_33", GROUP="video", MODE="0660"
+
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="849DF06F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_34", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="B671F0AF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_35", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="8381F06F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_36", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="D1D1F06F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_37", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="AB31F06F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_38", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="F121F06F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_39", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="B941F06F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_40", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="B021F0AF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_41", GROUP="video", MODE="0660"
+#ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="CF72F02F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_42", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="2911F02F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_43", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="CD22F02F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_44", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="3711F0AF", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_45", GROUP="video", MODE="0660"
+ATTRS{idProduct}=="08e5", ATTRS{idVendor}=="046d", SUBSYSTEM=="video4linux", ATTRS{serial}=="9BF6505F", ATTR{index}=="0", SYMLINK+="urc/cam/logitech_67", GROUP="video", MODE="0660"
+
+# Science cams
+ATTRS{idProduct}=="9520", ATTRS{idVendor}=="05a3", SUBSYSTEM=="video4linux", ATTR{name}=="HD USB Camera", ATTR{index}=="0", SYMLINK+="urc/cam/microcam_01"
+ATTRS{idProduct}=="0871", ATTRS{idVendor}=="a168", SUBSYSTEM=="video4linux", ATTR{name}=="Dino-Lite Premier: Dino-Lite Pr", ATTR{index}=="0", SYMLINK+="urc/cam/microscope_01"
+
+# Fisheye cam
+ATTRS{idProduct}=="0426", ATTRS{idVendor}=="040a", SUBSYSTEM=="video4linux", ATTRS{serial}=="13800000411", ATTR{index}=="0", SYMLINK+="urc/cam/fisheye"
+
+# micro cam
+ATTRS{idProduct}=="6366", ATTRS{idVendor}=="0c45", SUBSYSTEM=="video4linux", ATTRS{serial}=="UC684", ATTR{index}=="0", SYMLINK+="urc/cam/arducam_01"
+
+# non-root permissions
+SUBSYSTEM=="video4linux", GROUP="video", MODE="0660"

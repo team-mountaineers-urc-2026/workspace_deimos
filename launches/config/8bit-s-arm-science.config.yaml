@@ -1,0 +1,10 @@
+manipulator_node:
+  ros__parameters:
+    restart_button: 7       # Top Face Button
+    rail_left_button: 4     # Left Bumper
+    rail_right_button: 5    # Right Bumper
+    shoulder_axes: 1        # Left Stick
+    elbow_axes: 4           # Right Stick
+    wrist_pitch_axes: 7     # Up/Down D Pad
+    finger_extend_button: 2  # X Button
+    finger_retract_button: 1 # B Button

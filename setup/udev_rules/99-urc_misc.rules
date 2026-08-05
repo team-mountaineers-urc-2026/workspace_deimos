@@ -1,0 +1,110 @@
+##URC UDEV rules
+# Use these for static pathing to attached devices
+
+#####################################################################
+# Microcontrollers
+#####################################################################
+#
+#	if the arduino is plugged in it appears as
+#		/dev/urc/mc/arduino
+#
+#	if the maestro board is plugged in it appears as
+#		/dev/urc/mc/maestro
+#
+#	if the U2D2 is plugged in it appears as
+#		/dev/urc/mc/dynamixel
+#
+####################################################################
+ACTION=="add", ATTRS{idProduct}=="0089", ATTRS{idVendor}=="1ffb", SUBSYSTEM=="tty",  ATTRS{serial}=="00253572", MODE="0777", SYMLINK+="urc/mc/maestro"
+
+ACTION=="add", ATTRS{idProduct}=="6014", ATTRS{idVendor}=="0403", SUBSYSTEM=="tty", ATTRS{serial}=="FT1Y98XK", MODE="0777", SYMLINK+="urc/mc/dynamixel"
+
+# Arduinos
+ACTION=="add", ATTRS{serial}=="955383335353510170C1", SUBSYSTEM=="tty", SYMLINK+="urc/mc/er_payload"
+ACTION=="add", ATTRS{serial}=="7503330353435150B0A0", SUBSYSTEM=="tty", SYMLINK+="urc/mc/es_payload"
+ACTION=="add", ATTRS{serial}=="55037313237351915120", SUBSYSTEM=="tty", SYMLINK+="urc/mc/science_control"
+ACTION=="add", ATTRS{serial}=="950383038313517090B0", SUBSYSTEM=="tty", SYMLINK+="urc/mc/led_driver"
+
+
+###################################################################
+# Motorcontrollers
+###################################################################
+#
+# if the left RobotEQ is plugged in  it appears as
+#   /dev/urc/mtc/left_roboteq
+# if the right RobotEQ is plugged in it appears as
+#   /dev/urc/mtc/right_roboteq
+#
+###################################################################
+
+ACTION=="add", ATTRS{idVendor}=="26ac", ATTRS{idProduct}=="0032", SUBSYSTEM=="tty", MODE="0777", SYMLINK+="urc/mtc/pixhawk"
+ACTION=="add", ATTRS{idVendor}=="3185", ATTRS{idProduct}=="0033", SUBSYSTEM=="tty", MODE="0777", SYMLINK+="urc/mtc/pixhawk"
+ACTION=="add", ATTRS{idVendor}=="3185", ATTRS{idProduct}=="0038", SUBSYSTEM=="tty", MODE="0777", SYMLINK+="urc/mtc/pixhawk"
+
+# ASTRO roboteqs
+ACTION=="add", ATTRS{idVendor}=="20d2", ATTRS{idProduct}=="5740", SUBSYSTEM=="tty", KERNELS=="1-2", MODE="0777", SYMLINK+="urc/mtc/right_roboteq"
+ACTION=="add", ATTRS{idVendor}=="20d2", ATTRS{idProduct}=="5740", SUBSYSTEM=="tty", KERNELS=="1-3", MODE="0777", SYMLINK+="urc/mtc/left_roboteq"
+
+# Pathfinder roboteqs
+ACTION=="add", ENV{ID_VENDOR}=="9710", SUBSYSTEM=="tty", ENV{MINOR}=="2", MODE="0777", SYMLINK+="urc/mtc/right_roboteq"
+ACTION=="add", ENV{ID_VENDOR}=="9710", SUBSYSTEM=="tty", ENV{MINOR}=="0", MODE="0777", SYMLINK+="urc/mtc/left_roboteq"
+
+ENV{ID_VENDOR}=="1a86", ATTRS{idProduct}=="7523", SUBSYSTEM=="tty", KERNELS=="3-8.4.1", SYMLINK+="urc/uart_rail", MODE:="0777"
+ENV{ID_VENDOR}=="1a86", ATTRS{idProduct}=="7523", SUBSYSTEM=="tty", KERNELS=="3-8.3", SYMLINK+="urc/uart_roll", MODE:="0777"
+
+# U2D2s
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", SUBSYSTEM=="tty", ATTRS{serial}=="FT3WI4C5", MODE="0777", SYMLINK+="urc/mtc/sci_u2d2"
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", SUBSYSTEM=="tty", ATTRS{serial}=="FT3WI3LG", MODE="0777", SYMLINK+="urc/mtc/sci_u2d2"
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", SUBSYSTEM=="tty", ATTRS{serial}=="FT3WI35M", MODE="0777", SYMLINK+="urc/mtc/sci_u2d2"
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", SUBSYSTEM=="tty", ATTRS{serial}=="FT9HDBPI", MODE="0777", SYMLINK+="urc/mtc/gimbal_u2d2"
+
+# Pi Picos
+# Raspberry Pi Pico
+ACTION=="add", SUBSYSTEM=="tty", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0005", ATTRS{serial}=="e6616407e340b624", SYMLINK+="urc/mc/pi_pico", GROUP="dialout", MODE="0660"
+
+# QT Py
+ACTION=="add", SUBSYSTEM=="tty", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0005", ATTRS{serial}=="df648c8653264e2f", SYMLINK+="urc/mc/qtpy", GROUP="dialout", MODE="0660"
+# Spectrometer
+
+# Seeeduino XIAO SAMD21
+ACTION=="add", SUBSYSTEM=="tty", ATTRS{idVendor}=="2886", ATTRS{idProduct}=="802f", ATTRS{serial}=="DEF20B9D5157355730202020FF140D10", SYMLINK+="urc/mc/qtpy", GROUP="dialout", MODE="0660"
+
+ATTR{idVendor}=="2457", ATTR{idProduct}=="4000", SYMLINK+="urc/sensors/spectrometer", MODE:="0666"
+
+#Co-processor
+ACTION=="add", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="8036", SUBSYSTEM=="tty", MODE="0777", SYMLINK+="urc/mc/co_processor"
+
+# Pi Pico - just kept general idVendor & idProduct for all Pico's used
+# ACTION=="add", ATTRS{idVendor}=="2e8a", ATTRS{manufacturer}=="MicroPython", SUBSYSTEM=="tty", SYMLINK+="urc/mc/pi_pico"
+
+###################################################################
+# GPS
+###################################################################
+#
+# u-blox AG, u-blox 7 [linux module: cdc_acm]
+#
+# If the GPS is plugged in it will appear as
+#    /dev/urc/gps
+#
+###################################################################
+ACTION=="add", ATTRS{idVendor}=="1546", ATTRS{idProduct}=="01a8", SUBSYSTEM=="tty", SYMLINK+="urc/gps"
+
+# led relay
+SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", GROUP="plugdev", MODE="660", ENV{MODALIAS}="ignore"
+
+# XBee RF Modems (900 MHz antenna RFD radio)
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SUBSYSTEM=="tty", SYMLINK+="urc/rfd"
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SUBSYSTEM=="tty", ATTRS{serial}=="A293XDYA", SYMLINK+="urc/mtc/xbee_rover", SYMLINK+="urc/mtc/xbee"
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SUBSYSTEM=="tty", ATTRS{serial}=="A293YC00", SYMLINK+="urc/mtc/xbee_basestation", SYMLINK+="urc/mtc/xbee"
+
+# NPR-70 v05 (70cm NPR modem) (base->master, rover->client)
+ACTION=="add", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", SUBSYSTEM=="tty", ATTRS{serial}=="0676FF313358353143071542", SYMLINK+="urc/mtc/npr_base"
+ACTION=="add", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", SUBSYSTEM=="tty", ATTRS{serial}=="066AFF343433464757235430", SYMLINK+="urc/mtc/npr_rover"
+
+# CAN NETWORKS
+SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="606f", ATTRS{serial}=="004D00414657531620343133", NAME="can0"
+SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="606f", ATTRS{serial}=="004600465446570320353637", NAME="can2"
+SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="606f", ATTRS{serial}=="0035002D5546570120393438", NAME="can3"
+SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="606f", ATTRS{serial}=="001D003E4247570D20353238", NAME="can3"
+# sudo udevadm control --reload-rules
+# sudo udevadm trigger

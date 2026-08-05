@@ -1,0 +1,81 @@
+##URC UDEV rules
+# Use these for static pathing to attached devices
+#####################################################################
+# Controllers
+#####################################################################
+#
+# if the THOR joystick is plugged in it appears as
+# 	/dev/urc/js/thor
+# 
+# if the MATEO joystick is plugged in it appears as 
+# 	/dev/urc/js/mateo
+#
+# if the ARES joystick is plugged in it appears as 
+# 	/dev/urc/js/ares
+#
+# if the flightstick is plugged in it appears as
+# 	/dev/urc/js/flightstick
+#
+# if the purple 8-bit joystick is plugged in it appears as
+# 	/dev/urc/js/heimdall_drive
+#
+# if the green 8-bit is plugged in it appears as
+# 	/dev/urc/js/heimdall_arm
+#
+##################################################################### 	
+ACTION=="add", ATTRS{idProduct}=="0038", ATTRS{idVendor}=="045e", SUBSYSTEM=="input", KERNEL=="js[0-9]*", SYMLINK+="urc/js/flightstick"
+
+ACTION=="add", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c21f", SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="F59C922A", SYMLINK+="urc/js/thor", SYMLINK+="urc/js/gamepad"
+
+ACTION=="add", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c21f", SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="BFF59E32", SYMLINK+="urc/js/mateo", SYMLINK+="urc/js/gamepad"
+
+ACTION=="add", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c21f", SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="C42990C5", SYMLINK+="urc/js/ares", SYMLINK+="urc/js/gamepad"
+
+ACTION=="add", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c21f",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="01349D24", SYMLINK+="urc/js/astro", SYMLINK+="urc/js/gamepad"
+
+ACTION=="add", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="028e",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="03741CD", SYMLINK+="urc/js/xbox", SYMLINK+="urc/js/gamepad"
+
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="3016",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="30394ADCB2", SYMLINK+="urc/js/heimdall_arm", SYMLINK+="urc/js/gamepad"
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="3015",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="30394ADCB2", SYMLINK+="urc/js/heimdall_arm", SYMLINK+="urc/js/gamepad"
+
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="3106",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="C1394A94B1", SYMLINK+="urc/js/heimdall_drive", SYMLINK+="urc/js/gamepad"
+
+# Blue Controllers ~~~~~~~~~~~~~~~~~~~~~~~~
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="F0FC8A77D4", SYMLINK+="urc/js/daedalus_drive", SYMLINK+="urc/js/gamepad"
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="B285862299", SYMLINK+="urc/js/daedalus_drive", SYMLINK+="urc/js/gamepad"
+
+# Blue Arm 1 (Blue A1)
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="F9888622ED", SYMLINK+="urc/js/daedalus_arm", SYMLINK+="urc/js/gamepad"
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="301c",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="F9888622ED", SYMLINK+="urc/js/smartbot_arm", SYMLINK+="urc/js/gamepad"
+
+
+# Pink Controllers ~~~~~~~~~~~~~~~~~~~~~~~~
+# Pink Drive 1 (Pink D1)
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="918886A22F", SYMLINK+="urc/js/daedalus_drive", SYMLINK+="urc/js/gamepad" 
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="301c",  SUBSYSTEM=="input", KERNEL=="js*", ATTRS{serial}=="918886A22F", SYMLINK+="urc/js/smartbot_drive", SYMLINK+="urc/js/gamepad" 
+
+# Pink Arm 1 (Pink A1)
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="788886A230", SYMLINK+="urc/js/daedalus_arm", SYMLINK+="urc/js/gamepad" 
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="301c",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="788886A230", SYMLINK+="urc/js/smartbot_arm", SYMLINK+="urc/js/gamepad" 
+
+# Pink Arm 2 (Pink A2)
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="CC2B52A63C", SYMLINK+="urc/js/daedalus_arm", SYMLINK+="urc/js/gamepad" 
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="301c",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="CC2B52A63C", SYMLINK+="urc/js/smartbot_arm", SYMLINK+="urc/js/gamepad" 
+
+
+# Mint Controllers ~~~~~~~~~~~~~~~~~~~~~~~~
+# Mint Drive 1 (Mint D1) - Orange Joysticks
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="50319DA433", SYMLINK+="urc/js/daedalus_drive", SYMLINK+="urc/js/gamepad" 
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="301c",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="50319DA433", SYMLINK+="urc/js/smartbot_drive", SYMLINK+="urc/js/gamepad" 
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="F1E06C75A3", SYMLINK+="urc/js/daedalus_drive", SYMLINK+="urc/js/gamepad"
+
+
+
+# Misc Controllers ~~~~~~~~~~~~~~~~~~~~~~~~
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="EDFE777741", SYMLINK+="urc/js/daedalus_drive", SYMLINK+="urc/js/gamepad" 
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="301c",  SUBSYSTEM=="input", KERNEL=="js*", ATTRS{serial}=="EDFE777741", SYMLINK+="urc/js/smartbot_drive", SYMLINK+="urc/js/gamepad" 
+
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="F786EF199B", SYMLINK+="urc/js/daedalus_arm", SYMLINK+="urc/js/gamepad"
+ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a",  SUBSYSTEM=="input", KERNEL=="js[0-9]*", ATTRS{serial}=="F1CE537704", SYMLINK+="urc/js/daedalus_arm", SYMLINK+="urc/js/gamepad"
+
+

@@ -1,0 +1,7 @@
+/**:
+  ros__parameters:
+    qos_overrides:  #Group for all the qos settings
+      /parameter_events:
+        publisher:
+          depth: 1
+          reliability: best_effort

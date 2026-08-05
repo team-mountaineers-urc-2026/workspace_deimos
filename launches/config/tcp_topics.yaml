@@ -1,0 +1,19 @@
+- topic: /logitech_02/compressed
+  tunnel_queue_size: 1
+  server_namespace: /
+
+- topic: /logitech_04/compressed
+  tunnel_queue_size: 1
+  server_namespace: /
+
+- topic: /logitech_05/compressed
+  tunnel_queue_size: 1
+  server_namespace: /
+
+- topic: /logitech_12/compressed
+  tunnel_queue_size: 1
+  server_namespace: /
+
+- topic: /logitech_13/compressed
+  tunnel_queue_size: 1
+  server_namespace: /
